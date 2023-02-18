@@ -1,0 +1,14 @@
+@import url(./assets/fonts/stylesheet.css);
+
+* {
+  padding: 0;
+  font-family: "Inter";
+  margin: 0;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0e0e0e;
+  overflow: hidden;
+}

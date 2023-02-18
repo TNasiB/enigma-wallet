@@ -1,5 +1,15 @@
 import axios from "axios";
 import { useCookies } from "vue3-cookies";
+import { useNotification } from "@kyvg/vue3-notification";
+
+const { notify } = useNotification();
+
+const errorHandler = () =>
+  notify({
+    title: "Error",
+    text: "Not valid value of equipment",
+    type: "error",
+  });
 
 axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 
@@ -30,6 +40,8 @@ export const login = (body) =>
     body,
   });
 
+axios.get("https://catfact.ninja/fact").then((response) => console.log(response));
+
 export const getProfile = (addr) =>
   makeRequest({
     url: "qr",
@@ -45,7 +57,7 @@ export const returnEquipment = (equipmentId) => {
     headers: {
       "Content-Type": "text/plain",
     },
-  });
+  }).catch(() => errorHandler());
 };
 
 export const addEquipment = (equipmentId, address) =>
@@ -56,4 +68,4 @@ export const addEquipment = (equipmentId, address) =>
     headers: {
       "Content-Type": "text/plain",
     },
-  });
+  }).catch(() => errorHandler());

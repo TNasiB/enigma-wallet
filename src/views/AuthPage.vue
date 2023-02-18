@@ -1,6 +1,6 @@
 <template>
   <form class="auth-page" @submit.prevent="handleSubmit">
-    <AppInput label="Login" v-model="form.login" />
+    <AppInput label="Login" v-model="form.login" autofocus />
     <AppInput label="Password" type="password" v-model="form.password" />
     <AppButton class="auth-page__submit-btn" @click="handleSubmit">Continue</AppButton>
     <span v-if="error">Error</span>

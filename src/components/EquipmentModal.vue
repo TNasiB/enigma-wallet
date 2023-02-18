@@ -5,8 +5,8 @@
     overlayTransition="vfm-fade"
     contentTransition="vfm-fade"
   >
-    <form class="equipment-modal__form" @submit.prevent>
-      <AppInput label="Enter the equipment number" v-model="equipmentNumber" />
+    <form class="equipment-modal__form" @submit.prevent tabindex="-1">
+      <AppInput label="Enter the equipment number" v-model="equipmentNumber" autofocus />
       <AppButton @click="handleSubmit"
         >{{ type === "add" ? "Add" : "Return" }} Equipment</AppButton
       >

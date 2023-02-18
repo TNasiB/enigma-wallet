@@ -22,7 +22,13 @@
         }}</span>
       </p>
     </div>
-    <img class="profile-page__status-img" :src="definedIconSrc" />
+    <img
+      v-if="success"
+      class="profile-page__status-img"
+      src="../assets/accept-icon.svg"
+    />
+    <img v-else class="profile-page__status-img" src="../assets/decline-icon.svg" />
+
     <AppButton class="profile-page__btn" @click="goBack">Go back</AppButton>
     <AppButton class="profile-page__btn" type="passive" @click="openEquipment"
       >Equipment</AppButton
@@ -31,7 +37,7 @@
 </template>
 
 <script setup>
-import { onMounted, computed, ref, reactive } from "vue";
+import { onMounted, ref, reactive } from "vue";
 import AppButton from "../components/AppButton.vue";
 import { useRouter } from "vue-router";
 import { getProfile } from "../services";
@@ -71,12 +77,6 @@ const { open } = openEquipmentModal("add", props.address);
 const openEquipment = () => {
   open();
 };
-
-const definedIconSrc = computed(() => {
-  const url = success.value ? "accept-icon.svg" : "decline-icon.svg";
-  console.log(import.meta.url);
-  return new URL("../assets/" + url, import.meta.url).href;
-});
 </script>
 
 <style lang="scss" scoped>

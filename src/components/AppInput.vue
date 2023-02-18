@@ -4,6 +4,7 @@
     <input
       type="text"
       class="w-input__input"
+      tabindex="1"
       :value="modelValue"
       v-bind="attrs"
       @input="$emit('update:modelValue', $event.target.value)"

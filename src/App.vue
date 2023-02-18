@@ -3,6 +3,7 @@
     <ModalsContainer />
     <AppLogo />
     <router-view />
+    <notifications />
   </div>
 </template>
 

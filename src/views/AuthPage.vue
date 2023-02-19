@@ -28,7 +28,6 @@ const handleSubmit = async () => {
   const preparedToken = btoa(`${form.login}:${form.password}`);
 
   cookies.set("access-token", `Basic ${preparedToken}`);
-  router.push({ name: "homepage" });
 
   login()
     .then(() => {

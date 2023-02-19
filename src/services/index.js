@@ -4,12 +4,14 @@ import { useNotification } from "@kyvg/vue3-notification";
 
 const { notify } = useNotification();
 
-const errorHandler = () =>
+const errorHandler = () => {
+  console.log("error handler scope");
   notify({
     title: "Error",
     text: "Not valid value of equipment",
     type: "error",
   });
+};
 
 axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 

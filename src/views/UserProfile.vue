@@ -23,11 +23,15 @@
       </p>
     </div>
     <img
-      v-if="success"
+      v-show="success"
       class="profile-page__status-img"
       src="../assets/accept-icon.svg"
     />
-    <img v-else class="profile-page__status-img" src="../assets/decline-icon.svg" />
+    <img
+      v-show="!success"
+      class="profile-page__status-img"
+      src="../assets/decline-icon.svg"
+    />
 
     <AppButton class="profile-page__btn" @click="goBack">Go back</AppButton>
     <AppButton class="profile-page__btn" type="passive" @click="openEquipment"

@@ -14,10 +14,12 @@ import AppLogo from "./components/AppLogo.vue";
 
 <style scoped lang="scss">
 .wallet {
+  padding: 20px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
   justify-content: center;
 }
 </style>

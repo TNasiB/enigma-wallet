@@ -25,7 +25,7 @@ const hideLogo = computed(() => {
   align-items: center;
   position: absolute;
   margin-bottom: 47px;
-  top: 160px;
+  top: 13vh;
   width: 183px;
   transition: 1.3s;
 
@@ -42,7 +42,7 @@ const hideLogo = computed(() => {
 
   &--hided {
     width: 101px;
-    top: 46px;
+    top: 5vmin;
   }
 
   &--hided &__title {
